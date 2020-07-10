@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        style="@style/CardView_Style">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/playlist_item_imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/small_songNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Song Name"
+                android:layout_marginTop="5dp"
+                android:layout_above="@+id/small_artistTextView"
+                android:layout_centerHorizontal="true"
+                android:textSize="5sp">
+
+            </TextView>
+
+
+            <TextView
+                android:id="@+id/small_artistTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_alignBottom="@id/playlist_item_imageView"
+                android:layout_centerHorizontal="true"
+                android:text="Artist Name"
+                android:textSize="5sp">
+
+            </TextView>
+
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>

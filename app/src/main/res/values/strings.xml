@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Musical Structure App</string>
+    <string name="Library_Header">Music Library</string>
+    <string name="Playlist_Header">My Playlist</string>
+    <string name="Trending_Header">Trending</string>
+    <string name="Charts_Header">Music Charts</string>
+
+
+</resources>
