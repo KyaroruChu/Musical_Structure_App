@@ -24,11 +24,8 @@
             android:name=".PlaylistActivity"
             android:label="@string/Playlist_Header" />
         <activity
-            android:name=".TrendingActivity"
-            android:label="@string/Trending_Header" />
-        <activity
-            android:name=".ChartsActivity"
-            android:label="@string/Charts_Header" />
+            android:name=".ContainerActivity"
+            android:label="@string/Example_Header" />
     </application>
 
 </manifest>

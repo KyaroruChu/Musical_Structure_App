@@ -41,16 +41,99 @@
             android:layout_marginRight="18dp"
             android:background="?android:attr/listDivider" />
 
+        <RelativeLayout
+            android:id="@+id/searchbar_RelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider">
+
+
+            <ImageView
+                android:id="@+id/home_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                app:srcCompat="@drawable/home">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/Playlist_Header"
+                android:textSize="24sp">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/fistPlaylist_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/searchbar_RelativeLayout"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/My_First_Playlist"
+            android:textStyle="bold">
+
+        </TextView>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
+            android:id="@+id/recycler_view_1"
             android:layout_width="wrap_content"
-            android:layout_height="200dp">
+            android:layout_height="100dp"
+            android:layout_below="@+id/fistPlaylist_TextView"
+            android:layout_marginTop="4dp"
+            android:scrollbars="horizontal">
 
         </androidx.recyclerview.widget.RecyclerView>
 
+        <TextView
+            android:id="@+id/secondPlaylist_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recycler_view_1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/My_Second_Playlist"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_2"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_below="@+id/secondPlaylist_TextView"
+            android:layout_marginTop="4dp"
+            android:scrollbars="horizontal">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/thirdPlaylist_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recycler_view_2"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/My_Third_Playlist"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_3"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_below="@+id/thirdPlaylist_TextView"
+            android:layout_marginTop="4dp"
+            android:scrollbars="horizontal">
+
+        </androidx.recyclerview.widget.RecyclerView>
 
     </RelativeLayout>
-
 
 </FrameLayout>

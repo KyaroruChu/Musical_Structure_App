@@ -30,8 +30,6 @@ public class SongAdapterForVList extends ArrayAdapter<Song> {
         super(context, 0, songs);
     }
 
-
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -68,5 +66,4 @@ public class SongAdapterForVList extends ArrayAdapter<Song> {
         // so that it can be shown in the GridView
         return listItemView;
     }
-
 }

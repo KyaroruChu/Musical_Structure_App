@@ -6,7 +6,6 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             // The code in this method will be executed when the numbers View is clicked on.
             @Override
             public void onClick(View view) {
-                Intent trendingIntent = new Intent(MainActivity.this, TrendingActivity.class);
+                Intent trendingIntent = new Intent(MainActivity.this, ContainerActivity.class);
                 startActivity(trendingIntent);
             }
         });
@@ -62,11 +61,9 @@ public class MainActivity extends AppCompatActivity {
             // The code in this method will be executed when the numbers View is clicked on.
             @Override
             public void onClick(View view) {
-                Intent chartsIntent = new Intent(MainActivity.this,ChartsActivity.class);
+                Intent chartsIntent = new Intent(MainActivity.this,ContainerActivity.class);
                 startActivity(chartsIntent);
             }
         });
-
-
     }
 }

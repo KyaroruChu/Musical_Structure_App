@@ -78,6 +78,4 @@ public class SongAdapterForGrid extends ArrayAdapter<Song> {
         // so that it can be shown in the GridView
         return listItemView;
     }
-
-
 }

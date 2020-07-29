@@ -9,9 +9,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+
+// This is the page that shows all the songs in one's library
 
 public class LibraryActivity extends AppCompatActivity {
 
@@ -20,9 +23,8 @@ public class LibraryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
 
-
-
-        //Populate the array list with song photo, song name and artist name
+        //Populate the array list of songs in one's library
+        // Each song has a song photo, a song name and its related artist name
         final ArrayList<Song> songs = new ArrayList<Song>();
         songs.add(new Song(R.drawable.broken_glass_sia, "Broken Glass", "Sia", Color.WHITE));
         songs.add(new Song(R.drawable.flames_david_guetta_sia, "Flames", "David Guetta & Sia", Color.WHITE));
@@ -59,32 +61,43 @@ public class LibraryActivity extends AppCompatActivity {
         songs.add(new Song(R.drawable.loved_by_you_lordnox, "Loved by You", "Lordnox", Color.BLACK));
         songs.add(new Song(R.drawable.purple_lamborghini_skrillex_rick_ross, "Purple Lamborghini", "Skrillex, Rick Ross", Color.BLACK));
         songs.add(new Song(R.drawable.roxanne_arizona_zervas, "Roxanne", "Arizona Zervas", Color.BLACK));
-        songs.add(new Song(R.drawable.spice_girl_amine, "Spice Girl", "Amine", Color.BLACK ));
+        songs.add(new Song(R.drawable.spice_girl_amine, "Spice Girl", "Amine", Color.BLACK));
 
+        // Create the customized SongAdapter
         SongAdapterForGrid itemsAdapter = new SongAdapterForGrid(this, songs);
 
-        GridView libraryGridView = (GridView) findViewById(R.id.library_grid_view);
-
+        // Find the gridView display from xml
+        final GridView libraryGridView = (GridView) findViewById(R.id.library_grid_view);
         libraryGridView.setAdapter(itemsAdapter);
 
-        //Codes for when user click on an item in the gridView display of all the songs in his/her library
-        // Find the gridView display
-        final GridView gridView = (GridView) findViewById(R.id.library_grid_view);
-
         // Set a click listener on an item in that gridView
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        libraryGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             // The code in this method will be executed when the numbers View is clicked on.
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent playlistIntent = new Intent(LibraryActivity.this, PlayActivity.class);
-                Song currentSongArray = (Song) gridView.getItemAtPosition(position);
+                //Codes for when user click on an item in the gridView, the page also display of all the songs in his/her library
+                Song currentSongArray = (Song) libraryGridView.getItemAtPosition(position);
                 int drawableID = currentSongArray.getImageResourceId();
-                Log.v("*************", String.valueOf(drawableID));
-                playlistIntent.putExtra("drawableID", drawableID );
+                playlistIntent.putExtra("drawableID", drawableID);
                 playlistIntent.putExtra("libraryList", (Serializable) songs);
+                playlistIntent.putExtra("position", position);
+                Log.v("LibraryActivity***", "position passed in as intent is " + position);
                 startActivity(playlistIntent);
             }
         });
 
+        // Find the home Image button
+        ImageView homeButton = (ImageView) findViewById(R.id.home_imageView);
+
+        // Set a click listener on the home image button
+        homeButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LibraryActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

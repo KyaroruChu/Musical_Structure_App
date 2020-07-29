@@ -2,8 +2,12 @@
     <string name="app_name">Musical Structure App</string>
     <string name="Library_Header">Music Library</string>
     <string name="Playlist_Header">My Playlist</string>
-    <string name="Trending_Header">Trending</string>
+    <string name="Example_Header">Example Page</string>
     <string name="Charts_Header">Music Charts</string>
-
+    <string name="My_First_Playlist">My First Playlist</string>
+    <string name="My_Second_Playlist">Relaxed Playlist</string>
+    <string name="My_Third_Playlist">Workout Playlist</string>
+    <string name="Playing_Title">Playing</string>
+    <string name="Under_Construction">Empty Page for Practice</string>
 
 </resources>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
+        style="@style/CardView_Style"
         android:layout_width="150dp"
-        android:layout_height="150dp"
-        style="@style/CardView_Style">
+        android:layout_height="150dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -25,42 +25,36 @@
                 android:id="@+id/lib_grid_centre"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginTop="20dp"
-                android:layout_centerHorizontal="true">
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp">
 
             </ImageView>
 
             <TextView
                 android:id="@+id/songNameTextView"
-                tools:text="Song Name"
-                android:layout_marginTop="5dp"
-                android:layout_below="@id/lib_grid_centre"
+                style="@style/words_style"
                 android:layout_above="@id/artistTextView"
+                android:layout_below="@id/lib_grid_centre"
                 android:layout_centerHorizontal="true"
-                style="@style/words_style">
+                android:layout_marginTop="5dp"
+                tools:text="Song Name">
 
             </TextView>
-
 
             <TextView
                 android:id="@+id/artistTextView"
                 style="@style/words_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:layout_alignBottom="@id/lib_grid_background"
                 android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
                 android:text="Artist Name">
 
             </TextView>
 
-
-
         </RelativeLayout>
 
-
     </androidx.cardview.widget.CardView>
-
-
 
 </LinearLayout>

@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ChartsActivity extends AppCompatActivity {
+public class ContainerActivity extends AppCompatActivity {
 
+    // page that is meant to be empty page so I can have 4 buttons on the main page
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_charts);
+        setContentView(R.layout.activity_container);
     }
 }

@@ -8,7 +8,6 @@
     android:background="#40FFFFFF"
     tools:context=".MainActivity">
 
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,7 +19,6 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-
         <SearchView
             android:id="@+id/search_bar"
             android:layout_width="match_parent"
@@ -28,7 +26,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginRight="18dp"
-            android:background="@drawable/rounded_corner" >
+            android:background="@drawable/rounded_corner">
 
         </SearchView>
 
@@ -36,31 +34,29 @@
             android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="5dp"
+            android:layout_below="@id/search_bar"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="12dp"
             android:layout_marginRight="18dp"
-            android:layout_below="@id/search_bar"
             android:background="?android:attr/listDivider" />
 
-
         <androidx.cardview.widget.CardView
-            style="@style/CardView_Style"
-            android:layout_marginTop="32dp"
             android:id="@+id/menu_library"
+            style="@style/CardView_Style"
             android:layout_height="100dp"
             android:layout_below="@id/divider"
+            android:layout_marginTop="32dp"
             android:foreground="@drawable/library"
             app:cardCornerRadius="20dp"
             app:contentPaddingLeft="8dp"
             app:contentPaddingRight="8dp"
-            app:contentPaddingTop="8dp" >
-
+            app:contentPaddingTop="8dp">
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            style="@style/CardView_Style"
             android:id="@+id/menu_playlist"
+            style="@style/CardView_Style"
             android:layout_height="100dp"
             android:layout_below="@+id/menu_library"
             android:foreground="@drawable/playlist1"
@@ -70,8 +66,8 @@
             app:contentPaddingTop="8dp" />
 
         <androidx.cardview.widget.CardView
-            style="@style/CardView_Style"
             android:id="@+id/menu_trending"
+            style="@style/CardView_Style"
             android:layout_height="100dp"
             android:layout_below="@+id/menu_playlist"
             android:foreground="@drawable/trending"
@@ -81,8 +77,8 @@
             app:contentPaddingTop="8dp" />
 
         <androidx.cardview.widget.CardView
-            style="@style/CardView_Style"
             android:id="@+id/menu_charts"
+            style="@style/CardView_Style"
             android:layout_height="100dp"
             android:layout_below="@+id/menu_trending"
             android:foreground="@drawable/chart1"

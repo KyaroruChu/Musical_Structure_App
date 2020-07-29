@@ -41,13 +41,39 @@
             android:layout_marginRight="18dp"
             android:background="?android:attr/listDivider" />
 
+        <RelativeLayout
+            android:id="@+id/searchbar_RelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider">
+
+            <ImageView
+                android:id="@+id/home_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                app:srcCompat="@drawable/home">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/Playing_Title"
+                android:textSize="24sp">
+
+            </TextView>
+
+        </RelativeLayout>
+
         <ImageView
             android:id="@+id/playing_song_imageView"
             android:layout_width="match_parent"
             android:layout_height="130dp"
-            android:layout_below="@+id/divider"
-            android:layout_marginTop="12dp"
+            android:layout_below="@+id/searchbar_RelativeLayout"
             android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
             android:layout_marginRight="16dp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/bleeding_love_leona_lewis" />
@@ -67,11 +93,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/playing_song_imageView"
-            android:layout_marginTop="110dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="110dp"
             android:background="@android:color/transparent"
-            app:srcCompat="@drawable/play_button"
-            android:onClick="giveToast"/>
+            android:onClick="giveToastPlaying"
+            app:srcCompat="@drawable/play_button" />
 
         <ImageButton
             android:id="@+id/stepForwardButton"
@@ -94,8 +120,5 @@
         </ListView>
 
     </RelativeLayout>
-
-
-
 
 </FrameLayout>

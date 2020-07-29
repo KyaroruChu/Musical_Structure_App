@@ -11,39 +11,66 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
-    ArrayList<Song> songs;
-    public RecyclerViewAdapter(ArrayList<Song> songs){
-        songs = songs;
+    private ArrayList<Song> mSongs;
+    private OnItemClickListener mListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
-        TextView artistNameView;
-        public ViewHolder (@NonNull View itemView) {
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public ImageView iconImageView;
+        public TextView songNameView;
+        public TextView artistNameView;
+
+        public ViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
-            artistNameView = (TextView)itemView.findViewById(R.id.small_artistTextView);
+            iconImageView = (ImageView) itemView.findViewById(R.id.playlist_item_imageView);
+            songNameView = (TextView) itemView.findViewById(R.id.small_songNameTextView);
+            artistNameView = (TextView) itemView.findViewById(R.id.small_artistTextView);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null) {
+                        int position = getAbsoluteAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 
+    public RecyclerViewAdapter (ArrayList<Song> songs){
+        mSongs = songs;
+    }
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-
-        View view = inflater.inflate(R.layout.list_item_horizontal,parent,false);
-
-        return new ViewHolder(view);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_horizontal,parent, false);
+        ViewHolder vh = new ViewHolder(v, mListener);
+        return vh;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        holder.artistNameView(songs[position]);
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Song currentItem = mSongs.get(position);
+        holder.iconImageView.setImageResource(currentItem.getImageResourceId());
+        holder.songNameView.setText(currentItem.getSongName());
+        holder.artistNameView.setText(currentItem.getArtistName());
     }
 
     @Override
     public int getItemCount() {
-        return songs.size();
+        return mSongs.size();
     }
 }
 
